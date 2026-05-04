@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – BusTrack</title>
+  <meta name="description" content="Get in touch with the BusTrack team for support, partnerships, or feedback." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand" aria-label="BusTrack Home">
+        <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracking.html">Live Tracking</a></li>
+        <li><a href="routes.html">Routes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tracking.html" class="btn btn-primary btn-sm">Track Now</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner" aria-labelledby="contact-banner">
+    <div class="container">
+      <h1 id="contact-banner">📬 Contact Us</h1>
+      <p>We'd love to hear from you — reach out for support, feedback, or partnerships.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT MAIN -->
+  <section aria-label="Contact section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div>
+          <div class="section-header">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-sub">Our support team responds within 24 hours on business days.</p>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-icon" aria-hidden="true">📍</span>
+            <div>
+              <h4>Head Office</h4>
+              <p>123 Transit Avenue, Colombo 03,<br>Sri Lanka</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-icon" aria-hidden="true">📞</span>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+94112345678">+94 11 234 5678</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-icon" aria-hidden="true">✉️</span>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:support@bustracking.com">support@bustracking.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="contact-info-icon" aria-hidden="true">🕑</span>
+            <div>
+              <h4>Support Hours</h4>
+              <p>Monday – Friday: 08:00 – 20:00<br>Saturday: 09:00 – 17:00</p>
+            </div>
+          </div>
+
+          <!-- FAQ snippets -->
+          <div style="margin-top:2rem;">
+            <h3 style="font-weight:700;margin-bottom:1rem;font-size:1.1rem;">Frequently Asked</h3>
+
+            <details style="margin-bottom:.75rem;border:1px solid var(--clr-border);border-radius:var(--radius);padding:.75rem 1rem;cursor:pointer;">
+              <summary style="font-weight:600;font-size:.9rem;">How often is bus location updated?</summary>
+              <p style="font-size:.88rem;color:var(--clr-mid);margin-top:.5rem;">Every 10 seconds — providing near real-time accuracy for passengers.</p>
+            </details>
+
+            <details style="margin-bottom:.75rem;border:1px solid var(--clr-border);border-radius:var(--radius);padding:.75rem 1rem;cursor:pointer;">
+              <summary style="font-weight:600;font-size:.9rem;">Is BusTrack free to use?</summary>
+              <p style="font-size:.88rem;color:var(--clr-mid);margin-top:.5rem;">Yes — the passenger-facing tracking and route information is completely free.</p>
+            </details>
+
+            <details style="margin-bottom:.75rem;border:1px solid var(--clr-border);border-radius:var(--radius);padding:.75rem 1rem;cursor:pointer;">
+              <summary style="font-weight:600;font-size:.9rem;">How do I report a missing route?</summary>
+              <p style="font-size:.88rem;color:var(--clr-mid);margin-top:.5rem;">Use the contact form on this page and select "Route Report" as the subject.</p>
+            </details>
+
+            <details style="border:1px solid var(--clr-border);border-radius:var(--radius);padding:.75rem 1rem;cursor:pointer;">
+              <summary style="font-weight:600;font-size:.9rem;">Can our city integrate with BusTrack?</summary>
+              <p style="font-size:.88rem;color:var(--clr-mid);margin-top:.5rem;">Absolutely. Get in touch via email or the form to discuss a partnership.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card" style="padding:2rem;">
+          <h3 style="font-weight:700;margin-bottom:1.5rem;font-size:1.15rem;">Send Us a Message</h3>
+          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Full Name <span aria-hidden="true" style="color:var(--clr-danger);">*</span></label>
+                <input id="c-name" class="form-control" type="text" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="c-email">Email Address <span aria-hidden="true" style="color:var(--clr-danger);">*</span></label>
+                <input id="c-email" class="form-control" type="email" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="c-subject">Subject</label>
+              <select id="c-subject" class="form-control search-select" style="width:100%;">
+                <option value="">Select a topic…</option>
+                <option value="support">General Support</option>
+                <option value="route">Route Report</option>
+                <option value="partnership">Partnership Enquiry</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="c-msg">Message <span aria-hidden="true" style="color:var(--clr-danger);">*</span></label>
+              <textarea id="c-msg" class="form-control" placeholder="Describe your query or feedback…" required></textarea>
+            </div>
+
+            <div class="form-group" style="flex-direction:row;align-items:center;gap:.5rem;">
+              <input id="c-consent" type="checkbox" style="width:1rem;height:1rem;cursor:pointer;" />
+              <label for="c-consent" style="font-size:.85rem;font-weight:400;cursor:pointer;">
+                I agree to BusTrack's <a href="#" style="color:var(--clr-primary);">Privacy Policy</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+              Send Message ✉️
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI MAP PLACEHOLDER -->
+  <section style="padding-block:0;background:var(--clr-light);" aria-label="Office location map">
+    <div style="height:220px;background:linear-gradient(135deg,#c8e6f5,#e0f0ff);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--clr-mid);font-size:.95rem;">
+      <div>
+        <span style="font-size:2.5rem;display:block;margin-bottom:.75rem;" aria-hidden="true">📍</span>
+        <strong style="color:var(--clr-dark);">123 Transit Avenue, Colombo 03</strong><br>
+        Map placeholder — integrate Google Maps or OpenStreetMap for production.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="color:#fff;">
+            <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+          </div>
+          <p>Real-time bus tracking for passengers, drivers, and operators.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul role="list">
+            <li><a href="#">GPS Tracking</a></li>
+            <li><a href="#">Live ETAs</a></li>
+            <li><a href="#">Route Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 BusTrack. All rights reserved.</span>
+        <span>Made with ❤️ for commuters everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

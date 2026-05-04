@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Tracking – BusTrack</title>
+  <meta name="description" content="Track any bus in real time with BusTrack's live map and status dashboard." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand" aria-label="BusTrack Home">
+        <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracking.html">Live Tracking</a></li>
+        <li><a href="routes.html">Routes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tracking.html" class="btn btn-primary btn-sm">Track Now</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner" aria-labelledby="tracking-banner">
+    <div class="container">
+      <h1 id="tracking-banner">📍 Live Bus Tracking</h1>
+      <p>Select a bus from the list to see its real-time location and details.</p>
+    </div>
+  </div>
+
+  <!-- TRACKING DASHBOARD -->
+  <section aria-label="Tracking dashboard">
+    <div class="container">
+
+      <!-- Search bar -->
+      <div class="search-bar" role="search">
+        <label for="track-search" class="sr-only">Search buses</label>
+        <input id="track-search" class="search-input" type="search" placeholder="🔍 Search by bus number or route…" aria-label="Search buses" />
+        <select class="search-select" aria-label="Filter by status">
+          <option value="">All Status</option>
+          <option value="on-time">On Time</option>
+          <option value="delayed">Delayed</option>
+        </select>
+        <a href="#" class="btn btn-primary btn-sm">Search</a>
+      </div>
+
+      <div class="tracking-layout">
+
+        <!-- Bus List Sidebar -->
+        <aside class="sidebar-panel" aria-label="Bus list">
+          <div class="sidebar-panel-header">
+            <span>🚌 Active Buses</span>
+            <span class="badge badge-success">8 Online</span>
+          </div>
+          <div class="sidebar-panel-body">
+
+            <div class="bus-list-item selected"
+                 data-bus-num="101" data-bus-route="City Center → North Terminal"
+                 data-bus-eta="3 min" data-bus-speed="42 km/h"
+                 role="button" tabindex="0" aria-pressed="true">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #101</strong>
+                <span>City Center → North Terminal</span>
+              </div>
+              <span class="badge badge-success">On Time</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="204" data-bus-route="South Stop → University Gate"
+                 data-bus-eta="8 min" data-bus-speed="28 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #204</strong>
+                <span>South Stop → University Gate</span>
+              </div>
+              <span class="badge badge-warning">5 min delay</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="318" data-bus-route="West Avenue → Central Market"
+                 data-bus-eta="15 min" data-bus-speed="15 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #318</strong>
+                <span>West Avenue → Central Market</span>
+              </div>
+              <span class="badge badge-danger">Delayed</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="402" data-bus-route="Airport Express → Downtown"
+                 data-bus-eta="6 min" data-bus-speed="55 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #402</strong>
+                <span>Airport Express → Downtown</span>
+              </div>
+              <span class="badge badge-success">On Time</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="509" data-bus-route="Harbour Road → Tech Park"
+                 data-bus-eta="11 min" data-bus-speed="36 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #509</strong>
+                <span>Harbour Road → Tech Park</span>
+              </div>
+              <span class="badge badge-success">On Time</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="667" data-bus-route="Old Town → Shopping Mall"
+                 data-bus-eta="4 min" data-bus-speed="48 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #667</strong>
+                <span>Old Town → Shopping Mall</span>
+              </div>
+              <span class="badge badge-success">On Time</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="720" data-bus-route="Industrial Zone → City Hall"
+                 data-bus-eta="20 min" data-bus-speed="0 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #720</strong>
+                <span>Industrial Zone → City Hall</span>
+              </div>
+              <span class="badge badge-warning">At Stop</span>
+            </div>
+
+            <div class="bus-list-item"
+                 data-bus-num="815" data-bus-route="Riverside → Central Park"
+                 data-bus-eta="7 min" data-bus-speed="40 km/h"
+                 role="button" tabindex="0">
+              <span class="bus-list-icon" aria-hidden="true">🚌</span>
+              <div class="bus-list-info">
+                <strong>Bus #815</strong>
+                <span>Riverside → Central Park</span>
+              </div>
+              <span class="badge badge-success">On Time</span>
+            </div>
+
+          </div>
+        </aside>
+
+        <!-- Map + Detail Panel -->
+        <div>
+          <!-- Mock Map -->
+          <div class="mock-map-lg" role="img" aria-label="Live bus map">
+            <div class="map-overlay-msg">
+              <span class="map-emoji">🗺️</span>
+              <strong style="display:block;font-size:1.1rem;color:var(--clr-dark);margin-bottom:.5rem;">Live Map View</strong>
+              <p>Select a bus from the list on the left to see its route and current position on the map.</p>
+              <div style="margin-top:1.5rem;" aria-hidden="true">
+                <svg width="320" height="160" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="border-radius:var(--radius);opacity:.7">
+                  <rect width="320" height="160" fill="#c8e6f5"/>
+                  <rect x="0" y="70" width="320" height="20" fill="#aad4ea"/>
+                  <rect x="150" y="0" width="20" height="160" fill="#aad4ea"/>
+                  <circle cx="80"  cy="80" r="12" fill="#1a73e8" opacity=".9"/>
+                  <circle cx="220" cy="55" r="10" fill="#34a853" opacity=".9"/>
+                  <circle cx="270" cy="80" r="11" fill="#fbbc05" opacity=".9"/>
+                  <text x="76"  y="85" font-size="10" fill="#fff" font-weight="bold">B</text>
+                  <text x="216" y="60" font-size="10" fill="#fff" font-weight="bold">B</text>
+                  <text x="266" y="85" font-size="10" fill="#1e293b" font-weight="bold">B</text>
+                  <circle cx="135" cy="80" r="5" fill="#fff" opacity=".7"/>
+                  <circle cx="195" cy="80" r="5" fill="#fff" opacity=".7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detail Panel -->
+          <div id="track-detail-panel" class="card" style="margin-top:1.25rem;" aria-live="polite">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <h3 style="font-size:1.1rem;">Bus Details – <span id="detail-bus-num">#101</span></h3>
+              <span class="badge badge-success">Live</span>
+            </div>
+            <p style="font-size:.88rem;color:var(--clr-mid);margin-bottom:.25rem;">Route: <strong id="detail-bus-route">City Center → North Terminal</strong></p>
+            <div class="track-info-grid">
+              <div class="track-info-item">
+                <label>Next Stop ETA</label>
+                <p id="detail-bus-eta">3 min</p>
+              </div>
+              <div class="track-info-item">
+                <label>Current Speed</label>
+                <p id="detail-bus-speed">42 km/h</p>
+              </div>
+              <div class="track-info-item">
+                <label>Occupancy</label>
+                <p>72%</p>
+              </div>
+              <div class="track-info-item">
+                <label>Last Updated</label>
+                <p>Just now</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="color:#fff;">
+            <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+          </div>
+          <p>Real-time bus tracking for passengers, drivers, and operators.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul role="list">
+            <li><a href="#">GPS Tracking</a></li>
+            <li><a href="#">Live ETAs</a></li>
+            <li><a href="#">Route Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 BusTrack. All rights reserved.</span>
+        <span>Made with ❤️ for commuters everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

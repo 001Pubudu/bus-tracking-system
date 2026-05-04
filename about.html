@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – BusTrack</title>
+  <meta name="description" content="Learn about BusTrack's mission, team, and values." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand" aria-label="BusTrack Home">
+        <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracking.html">Live Tracking</a></li>
+        <li><a href="routes.html">Routes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tracking.html" class="btn btn-primary btn-sm">Track Now</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner" aria-labelledby="about-banner">
+    <div class="container">
+      <h1 id="about-banner">About BusTrack</h1>
+      <p>Our mission, values, and the team that makes it happen.</p>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section aria-labelledby="mission-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="mission-title">🎯 Our Mission</h2>
+      </div>
+      <p class="mission-text">
+        At BusTrack, we believe public transport should be transparent, reliable, and
+        stress-free for everyone. We built this platform to bridge the information gap
+        between bus operators and passengers — delivering real-time GPS data, smart alerts,
+        and easy-to-read schedules so you always know where your bus is.
+      </p>
+      <p class="mission-text" style="margin-top:1rem;">
+        Whether you're a daily commuter, a fleet manager, or a city planner, BusTrack
+        gives you the visibility you need to make smarter decisions and keep people moving.
+      </p>
+
+      <div class="values-grid">
+        <div class="value-item">
+          <span class="value-icon">🌐</span>
+          <div>
+            <h4>Transparency</h4>
+            <p>Every data point is accurate and openly accessible to passengers and operators.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">⚡</span>
+          <div>
+            <h4>Speed</h4>
+            <p>Location updates every 10 seconds so you get truly live information.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">♿</span>
+          <div>
+            <h4>Accessibility</h4>
+            <p>Built with WCAG guidelines so every user can navigate with ease.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🔒</span>
+          <div>
+            <h4>Security</h4>
+            <p>Encrypted data, secure APIs, and role-based access keep information safe.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🤝</span>
+          <div>
+            <h4>Partnership</h4>
+            <p>We work closely with operators and city councils to improve every route.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🌱</span>
+          <div>
+            <h4>Sustainability</h4>
+            <p>Encouraging public transport reduces traffic congestion and carbon emissions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip" aria-label="Company statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>2019</h3>
+          <p>Year Founded</p>
+        </div>
+        <div class="stat-item">
+          <h3>15+</h3>
+          <p>Cities Covered</p>
+        </div>
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p>Team Members</p>
+        </div>
+        <div class="stat-item">
+          <h3>5M+</h3>
+          <p>Trips Tracked</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section style="background:var(--clr-light);" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title" id="how-title">How BusTrack Works</h2>
+        <p class="section-sub">A simple pipeline from GPS device to your screen.</p>
+      </div>
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+        <div class="card feature-card">
+          <div class="feature-icon">📡</div>
+          <h3>1. GPS Collection</h3>
+          <p>Each bus transmits its GPS coordinates every 10 seconds via an on-board device.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>2. Cloud Processing</h3>
+          <p>Our servers process location data and calculate accurate ETAs in real-time.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3>3. Live Map Update</h3>
+          <p>The map refreshes automatically — passengers see up-to-the-second positions.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>4. Smart Alerts</h3>
+          <p>Delays, arrivals, and route changes are pushed to users instantly via notifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section aria-labelledby="team-title">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title" id="team-title">Meet the Team</h2>
+        <p class="section-sub">The people behind BusTrack's mission.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar" aria-hidden="true">P</div>
+          <h4>Pubudu Silva</h4>
+          <p>Founder &amp; CEO</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#059669,#10b981)" aria-hidden="true">A</div>
+          <h4>Amara Perera</h4>
+          <p>Head of Engineering</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)" aria-hidden="true">N</div>
+          <h4>Nuwan Karunaratne</h4>
+          <p>Lead UX Designer</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#dc2626,#f87171)" aria-hidden="true">S</div>
+          <h4>Sahan Fernando</h4>
+          <p>Backend Developer</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#d97706,#fbbf24)" aria-hidden="true">M</div>
+          <h4>Malika Dissanayake</h4>
+          <p>Data &amp; Analytics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner" aria-labelledby="about-cta">
+    <div class="container">
+      <h2 id="about-cta">Want to Partner With Us?</h2>
+      <p>We work with city councils, private operators, and transit agencies worldwide.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-accent">Get in Touch</a>
+        <a href="tracking.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">Try BusTrack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="color:#fff;">
+            <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+          </div>
+          <p>Real-time bus tracking for passengers, drivers, and operators.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul role="list">
+            <li><a href="#">GPS Tracking</a></li>
+            <li><a href="#">Live ETAs</a></li>
+            <li><a href="#">Route Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 BusTrack. All rights reserved.</span>
+        <span>Made with ❤️ for commuters everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
