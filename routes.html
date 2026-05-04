@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Routes & Schedules – BusTrack</title>
+  <meta name="description" content="View all bus routes, stops, and schedules for BusTrack." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand" aria-label="BusTrack Home">
+        <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracking.html">Live Tracking</a></li>
+        <li><a href="routes.html">Routes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tracking.html" class="btn btn-primary btn-sm">Track Now</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner" aria-labelledby="routes-banner">
+    <div class="container">
+      <h1 id="routes-banner">🚏 Routes &amp; Schedules</h1>
+      <p>Browse all bus routes, stops, and departure times.</p>
+    </div>
+  </div>
+
+  <!-- ROUTES MAIN -->
+  <section aria-label="Routes section">
+    <div class="container">
+
+      <!-- Search bar -->
+      <div class="search-bar" role="search">
+        <label for="route-search" class="sr-only">Search routes</label>
+        <input id="route-search" class="search-input" type="search" placeholder="🔍 Search routes by name, stop, or number…" aria-label="Search routes" />
+        <select class="search-select" aria-label="Filter by status">
+          <option value="">All Status</option>
+          <option value="active">Active</option>
+          <option value="delayed">Delayed</option>
+          <option value="weekend">Weekend Only</option>
+        </select>
+      </div>
+
+      <!-- Tabs -->
+      <div data-tabs>
+        <div class="tabs" role="tablist" aria-label="Route views">
+          <button class="tab-btn active" data-tab="all-routes"   role="tab" aria-selected="true">All Routes</button>
+          <button class="tab-btn"        data-tab="schedule"     role="tab" aria-selected="false">Today's Schedule</button>
+          <button class="tab-btn"        data-tab="stops"        role="tab" aria-selected="false">Stop Details</button>
+        </div>
+
+        <!-- Tab: All Routes -->
+        <div class="tab-panel active" data-tab-panel="all-routes" role="tabpanel">
+          <div class="routes-table-wrap">
+            <table class="routes-table" aria-label="All bus routes">
+              <thead>
+                <tr>
+                  <th>Route No.</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Stops</th>
+                  <th>Frequency</th>
+                  <th>First Bus</th>
+                  <th>Last Bus</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="route-row">
+                  <td><strong>R-01</strong></td>
+                  <td>City Center</td>
+                  <td>North Terminal</td>
+                  <td>12</td>
+                  <td>Every 15 min</td>
+                  <td>05:30</td>
+                  <td>23:00</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-05</strong></td>
+                  <td>South Bus Stop</td>
+                  <td>University Gate</td>
+                  <td>9</td>
+                  <td>Every 20 min</td>
+                  <td>06:00</td>
+                  <td>22:00</td>
+                  <td><span class="badge badge-warning">Delayed</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-08</strong></td>
+                  <td>Harbour Road</td>
+                  <td>Tech Park</td>
+                  <td>7</td>
+                  <td>Every 25 min</td>
+                  <td>06:30</td>
+                  <td>21:30</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-12</strong></td>
+                  <td>West Avenue</td>
+                  <td>Central Market</td>
+                  <td>14</td>
+                  <td>Every 30 min</td>
+                  <td>05:00</td>
+                  <td>23:30</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-15</strong></td>
+                  <td>Old Town</td>
+                  <td>Shopping Mall</td>
+                  <td>10</td>
+                  <td>Every 20 min</td>
+                  <td>07:00</td>
+                  <td>21:00</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-22</strong></td>
+                  <td>Airport</td>
+                  <td>Downtown</td>
+                  <td>6</td>
+                  <td>Every 45 min</td>
+                  <td>04:00</td>
+                  <td>00:00</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-27</strong></td>
+                  <td>Industrial Zone</td>
+                  <td>City Hall</td>
+                  <td>8</td>
+                  <td>Every 40 min</td>
+                  <td>06:00</td>
+                  <td>20:00</td>
+                  <td><span class="badge badge-info">Weekdays Only</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+                <tr class="route-row">
+                  <td><strong>R-33</strong></td>
+                  <td>Riverside</td>
+                  <td>Central Park</td>
+                  <td>11</td>
+                  <td>Every 30 min</td>
+                  <td>07:30</td>
+                  <td>19:30</td>
+                  <td><span class="badge badge-warning">Weekend Only</span></td>
+                  <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab: Today's Schedule -->
+        <div class="tab-panel" data-tab-panel="schedule" role="tabpanel">
+          <div class="cards-grid">
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:1rem;">Route R-01 – Today</h3>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot active"></div>
+                  <div class="tl-time">05:30</div>
+                  <div class="tl-stop">City Center (Departure)</div>
+                  <div class="tl-note">Platform 3</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">05:45</div>
+                  <div class="tl-stop">Market Square</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">06:00</div>
+                  <div class="tl-stop">Park Road Junction</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">06:20</div>
+                  <div class="tl-stop">East Bridge</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">06:45</div>
+                  <div class="tl-stop">North Terminal (Arrival)</div>
+                  <div class="tl-note">End of route</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:1rem;">Route R-22 – Airport Express</h3>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot active"></div>
+                  <div class="tl-time">04:00</div>
+                  <div class="tl-stop">Airport Terminal 1</div>
+                  <div class="tl-note">First service</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">04:15</div>
+                  <div class="tl-stop">Airport Terminal 2</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">04:35</div>
+                  <div class="tl-stop">Motorway Junction</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">04:55</div>
+                  <div class="tl-stop">City Outskirts</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">05:15</div>
+                  <div class="tl-stop">Downtown (Arrival)</div>
+                  <div class="tl-note">Central interchange</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:1rem;">Route R-05 – University Line</h3>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot active"></div>
+                  <div class="tl-time">06:00</div>
+                  <div class="tl-stop">South Bus Stop</div>
+                  <div class="tl-note">Bay 2</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">06:12</div>
+                  <div class="tl-stop">Library Road</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">06:25</div>
+                  <div class="tl-stop">Student Housing</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot"></div>
+                  <div class="tl-time">06:40</div>
+                  <div class="tl-stop">University Gate (Arrival)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Stop Details -->
+        <div class="tab-panel" data-tab-panel="stops" role="tabpanel">
+          <div class="cards-grid">
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:0.5rem;">🚏 City Center Stop</h3>
+              <p style="font-size:.85rem;color:var(--clr-mid);margin-bottom:1rem;">Main interchange · Platform 1–4</p>
+              <p style="font-size:.9rem;"><strong>Routes Served:</strong> R-01, R-05, R-12, R-22</p>
+              <p style="font-size:.9rem;margin-top:.4rem;"><strong>Facilities:</strong> Shelter, seating, real-time display</p>
+              <div style="margin-top:1rem;">
+                <span class="badge badge-info" style="margin-right:.4rem;">24h Service</span>
+                <span class="badge badge-success">Accessible</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:0.5rem;">🚏 North Terminal</h3>
+              <p style="font-size:.85rem;color:var(--clr-mid);margin-bottom:1rem;">End-of-line terminus</p>
+              <p style="font-size:.9rem;"><strong>Routes Served:</strong> R-01, R-08, R-27</p>
+              <p style="font-size:.9rem;margin-top:.4rem;"><strong>Facilities:</strong> Shelter, waiting room, toilets</p>
+              <div style="margin-top:1rem;">
+                <span class="badge badge-success">Accessible</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:0.5rem;">🚏 University Gate</h3>
+              <p style="font-size:.85rem;color:var(--clr-mid);margin-bottom:1rem;">Campus stop · High footfall</p>
+              <p style="font-size:.9rem;"><strong>Routes Served:</strong> R-05, R-15</p>
+              <p style="font-size:.9rem;margin-top:.4rem;"><strong>Facilities:</strong> Shelter, real-time display, bike rack</p>
+              <div style="margin-top:1rem;">
+                <span class="badge badge-success">Accessible</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="font-weight:700;margin-bottom:0.5rem;">🚏 Airport Terminal</h3>
+              <p style="font-size:.85rem;color:var(--clr-mid);margin-bottom:1rem;">Airside drop-off &amp; pick-up</p>
+              <p style="font-size:.9rem;"><strong>Routes Served:</strong> R-22</p>
+              <p style="font-size:.9rem;margin-top:.4rem;"><strong>Facilities:</strong> Covered bay, 24/7 operations</p>
+              <div style="margin-top:1rem;">
+                <span class="badge badge-info" style="margin-right:.4rem;">24h Service</span>
+                <span class="badge badge-success">Accessible</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /data-tabs -->
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner" aria-labelledby="routes-cta">
+    <div class="container">
+      <h2 id="routes-cta">Know Your Route. Trust Your Journey.</h2>
+      <p>Track any bus live — right from your browser, no app needed.</p>
+      <div class="cta-actions">
+        <a href="tracking.html" class="btn btn-accent">📍 Live Tracking</a>
+        <a href="contact.html"  class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">Report an Issue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="color:#fff;">
+            <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+          </div>
+          <p>Real-time bus tracking for passengers, drivers, and operators.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul role="list">
+            <li><a href="#">GPS Tracking</a></li>
+            <li><a href="#">Live ETAs</a></li>
+            <li><a href="#">Route Planner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 BusTrack. All rights reserved.</span>
+        <span>Made with ❤️ for commuters everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

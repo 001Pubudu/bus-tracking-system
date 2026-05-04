@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusTrack – Real-Time Bus Tracking System</title>
+  <meta name="description" content="Track buses in real-time, view routes and schedules, and never miss your ride again." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand" aria-label="BusTrack Home">
+        <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracking.html">Live Tracking</a></li>
+        <li><a href="routes.html">Routes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tracking.html" class="btn btn-primary btn-sm">Track Now</a>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title" id="hero-title">
+            Know Where Your <span>Bus</span> Is,<br>Every Second
+          </h1>
+          <p class="hero-desc">
+            BusTrack delivers real-time GPS tracking, live ETA updates, and full
+            route schedules — all in one easy-to-use platform for passengers,
+            drivers, and operators.
+          </p>
+          <div class="hero-actions">
+            <a href="tracking.html" class="btn btn-accent">🗺️ Track a Bus</a>
+            <a href="routes.html"   class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">View Routes</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mock-map">
+            <div class="map-title">🔴 Live Map</div>
+            <svg class="map-svg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <!-- Road grid -->
+              <rect width="400" height="180" fill="#1a2a4a"/>
+              <line x1="0" y1="90" x2="400" y2="90" stroke="#2d4a7a" stroke-width="12"/>
+              <line x1="200" y1="0" x2="200" y2="180" stroke="#2d4a7a" stroke-width="8"/>
+              <line x1="0" y1="40" x2="400" y2="40" stroke="#1e3a6a" stroke-width="4"/>
+              <line x1="0" y1="140" x2="400" y2="140" stroke="#1e3a6a" stroke-width="4"/>
+              <!-- Bus markers -->
+              <circle cx="80"  cy="90" r="10" fill="#fbbc05"/>
+              <circle cx="260" cy="65" r="10" fill="#34a853"/>
+              <circle cx="340" cy="90" r="10" fill="#ea4335"/>
+              <!-- Bus icons text -->
+              <text x="76"  y="95" font-size="12" fill="#1e293b" font-weight="bold">B</text>
+              <text x="256" y="70" font-size="12" fill="#1e293b" font-weight="bold">B</text>
+              <text x="336" y="95" font-size="12" fill="#1e293b" font-weight="bold">B</text>
+              <!-- Stop markers -->
+              <circle cx="160" cy="90" r="5" fill="#fff" opacity=".6"/>
+              <circle cx="310" cy="90" r="5" fill="#fff" opacity=".6"/>
+            </svg>
+            <div class="live-chips">
+              <span class="live-chip"><span class="dot dot-green"></span> Bus 101 – On Time</span>
+              <span class="live-chip"><span class="dot dot-yellow"></span> Bus 204 – 5 min delay</span>
+              <span class="live-chip"><span class="dot dot-red"></span> Bus 318 – Delayed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS STRIP ===================== -->
+  <div class="stats-strip" aria-label="System statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>120+</h3>
+          <p>Active Buses</p>
+        </div>
+        <div class="stat-item">
+          <h3>48</h3>
+          <p>Routes Covered</p>
+        </div>
+        <div class="stat-item">
+          <h3>30K+</h3>
+          <p>Daily Passengers</p>
+        </div>
+        <div class="stat-item">
+          <h3>99.5%</h3>
+          <p>Uptime</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== LIVE BUS STATUS ===================== -->
+  <section id="live-status" aria-labelledby="status-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="status-title">🟢 Live Bus Status</h2>
+        <p class="section-sub">Real-time status of buses currently in service. Updates automatically.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <article class="card" aria-label="Bus 101 status">
+          <div class="bus-card-header">
+            <span class="bus-icon" aria-hidden="true">🚌</span>
+            <span class="badge badge-success">On Time</span>
+          </div>
+          <div class="bus-number">Bus #101</div>
+          <div class="bus-route">City Center → North Terminal</div>
+          <div class="bus-detail"><span>ETA Next Stop</span><span data-live-eta>3 min</span></div>
+          <div class="bus-detail"><span>Occupancy</span><span>72%</span></div>
+          <div class="bus-detail"><span>Last Updated</span><span>Just now</span></div>
+          <div class="progress-bar-wrap" aria-label="Route progress 72%">
+            <div class="progress-bar" data-width="72%" style="width:0"></div>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Bus 204 status">
+          <div class="bus-card-header">
+            <span class="bus-icon" aria-hidden="true">🚌</span>
+            <span class="badge badge-warning">5 min Delay</span>
+          </div>
+          <div class="bus-number">Bus #204</div>
+          <div class="bus-route">South Bus Stop → University Gate</div>
+          <div class="bus-detail"><span>ETA Next Stop</span><span data-live-eta>8 min</span></div>
+          <div class="bus-detail"><span>Occupancy</span><span>55%</span></div>
+          <div class="bus-detail"><span>Last Updated</span><span>2 min ago</span></div>
+          <div class="progress-bar-wrap" aria-label="Route progress 55%">
+            <div class="progress-bar" data-width="55%" style="width:0"></div>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Bus 318 status">
+          <div class="bus-card-header">
+            <span class="bus-icon" aria-hidden="true">🚌</span>
+            <span class="badge badge-danger">Delayed</span>
+          </div>
+          <div class="bus-number">Bus #318</div>
+          <div class="bus-route">West Avenue → Central Market</div>
+          <div class="bus-detail"><span>ETA Next Stop</span><span data-live-eta>15 min</span></div>
+          <div class="bus-detail"><span>Occupancy</span><span>40%</span></div>
+          <div class="bus-detail"><span>Last Updated</span><span>5 min ago</span></div>
+          <div class="progress-bar-wrap" aria-label="Route progress 40%">
+            <div class="progress-bar" data-width="40%" style="width:0"></div>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Bus 402 status">
+          <div class="bus-card-header">
+            <span class="bus-icon" aria-hidden="true">🚌</span>
+            <span class="badge badge-success">On Time</span>
+          </div>
+          <div class="bus-number">Bus #402</div>
+          <div class="bus-route">Airport Express → Downtown</div>
+          <div class="bus-detail"><span>ETA Next Stop</span><span data-live-eta>6 min</span></div>
+          <div class="bus-detail"><span>Occupancy</span><span>90%</span></div>
+          <div class="bus-detail"><span>Last Updated</span><span>Just now</span></div>
+          <div class="progress-bar-wrap" aria-label="Route progress 90%">
+            <div class="progress-bar" data-width="90%" style="width:0"></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="tracking.html" class="btn btn-primary">View All Buses →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section style="background:var(--clr-light);" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title" id="features-title">Why Choose BusTrack?</h2>
+        <p class="section-sub">Everything you need to navigate the city with confidence.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>Real-Time GPS</h3>
+          <p>See your bus move on the map with live location updates every 10 seconds.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Accurate ETAs</h3>
+          <p>Know exactly when your bus will arrive — no more waiting in the dark.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Smart Alerts</h3>
+          <p>Get notified about delays, route changes, and bus arrivals automatically.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3>Full Route Maps</h3>
+          <p>Browse complete route information with all stops, timings, and fares.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Works beautifully on any device — phone, tablet, or desktop.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Reliable & Secure</h3>
+          <p>99.5% uptime guarantee with encrypted data transfer at all times.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POPULAR ROUTES ===================== -->
+  <section aria-labelledby="routes-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="routes-title">🚏 Popular Routes</h2>
+        <p class="section-sub">Frequently used bus routes with live availability.</p>
+      </div>
+
+      <div class="routes-table-wrap">
+        <table class="routes-table" aria-label="Popular bus routes">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Frequency</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="route-row">
+              <td><strong>R-01</strong></td>
+              <td>City Center</td>
+              <td>North Terminal</td>
+              <td>Every 15 min</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+            </tr>
+            <tr class="route-row">
+              <td><strong>R-05</strong></td>
+              <td>South Bus Stop</td>
+              <td>University Gate</td>
+              <td>Every 20 min</td>
+              <td><span class="badge badge-warning">Delayed</span></td>
+              <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+            </tr>
+            <tr class="route-row">
+              <td><strong>R-12</strong></td>
+              <td>West Avenue</td>
+              <td>Central Market</td>
+              <td>Every 30 min</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+            </tr>
+            <tr class="route-row">
+              <td><strong>R-22</strong></td>
+              <td>Airport</td>
+              <td>Downtown</td>
+              <td>Every 45 min</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td><a href="tracking.html" class="btn btn-outline btn-sm">Track</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="routes.html" class="btn btn-primary">See All Routes →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section style="background:var(--clr-light);" aria-labelledby="testimonials-title">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title" id="testimonials-title">What Passengers Say</h2>
+        <p class="section-sub">Thousands of daily commuters trust BusTrack.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card testimonial-card">
+          <p class="testimonial-text">"BusTrack completely changed my commute. I know exactly when to leave the house now. No more missed buses!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">S</div>
+            <div>
+              <div class="author-name">Sarah M.</div>
+              <div class="author-role">Daily Commuter</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testimonial-card">
+          <p class="testimonial-text">"As a driver, the app makes it easy to stay on schedule and communicate with dispatch. Really well designed."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:var(--clr-success)" aria-hidden="true">J</div>
+            <div>
+              <div class="author-name">James K.</div>
+              <div class="author-role">Bus Driver, Route 12</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testimonial-card">
+          <p class="testimonial-text">"Our fleet management improved by 40% after adopting BusTrack. The real-time data is invaluable."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#7c3aed" aria-hidden="true">A</div>
+            <div>
+              <div class="author-name">Anika P.</div>
+              <div class="author-role">Operations Manager</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 id="cta-title">Ready to Never Miss a Bus Again?</h2>
+      <p>Join 30,000+ daily users who rely on BusTrack for their commutes.</p>
+      <div class="cta-actions">
+        <a href="tracking.html" class="btn btn-accent">🗺️ Start Tracking</a>
+        <a href="contact.html"  class="btn btn-outline" style="border-color:rgba(255,255,255,.6);color:#fff;">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="color:#fff;">
+            <span class="brand-icon" aria-hidden="true">🚌</span> BusTrack
+          </div>
+          <p>Real-time bus tracking for passengers, drivers, and operators. Built for reliability.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul role="list">
+            <li><a href="#">GPS Tracking</a></li>
+            <li><a href="#">Live ETAs</a></li>
+            <li><a href="#">Route Planner</a></li>
+            <li><a href="#">Alerts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 BusTrack. All rights reserved.</span>
+        <span>Made with ❤️ for commuters everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
