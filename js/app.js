@@ -134,8 +134,8 @@
       // Update detail panel if present
       const panel = qs('#track-detail-panel');
       if (panel) {
-        const busNum  = item.dataset.busNum  || '—';
-        const busRoute= item.dataset.busRoute|| '—';
+        const busNum   = item.dataset.busNum   || '—';
+        const busRoute = item.dataset.busRoute || '—';
         const busEta  = item.dataset.busEta  || '—';
         const busSpeed= item.dataset.busSpeed|| '—';
 
